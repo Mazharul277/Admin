@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:background="#F9A825"
+    tools:context=".DoctorMenu">
+
+    <Button
+        android:id="@+id/doctorListAdBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Doctor List"
+        android:textSize="22sp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/button_rounded"
+        />
+    <Button
+        android:id="@+id/addDoctorBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Doctor"
+        android:textSize="22sp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_rounded"
+        />
+
+</LinearLayout>
