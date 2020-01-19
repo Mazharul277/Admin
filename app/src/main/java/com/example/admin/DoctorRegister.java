@@ -2,6 +2,7 @@ package com.example.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -23,7 +24,7 @@ public class DoctorRegister extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_register);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Doctors");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Doctor");
 
         mPatientName = findViewById(R.id.patientName);
         mEmail = findViewById(R.id.emailIdrg);
@@ -69,11 +70,14 @@ public class DoctorRegister extends AppCompatActivity {
 
         String key = databaseReference.push().getKey();
 
-        Doctors doctors = new Doctors(name, email, password, contactNo, birthDate, address, city);
+        Doctor doctor = new Doctor(name, email, password, contactNo, birthDate, address, city);
 
-        databaseReference.child(key).setValue(doctors);
+        databaseReference.child(key).setValue(doctor);
 
         Toast.makeText(getApplicationContext(), "Doctor is added", Toast.LENGTH_LONG).show();
+
+        Intent intent=new Intent(DoctorRegister.this,DoctorMenu.class);
+        startActivity(intent);
 
         mPatientName.setText("");
         mEmail.setText("");

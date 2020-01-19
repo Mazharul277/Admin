@@ -1,14 +1,13 @@
 package com.example.admin;
 
-public class Doctors {
+public class Doctor {
     private String name, email, password, contactNo, birthDate, address, city;
 
-    public void Doctors() {
-
+    public Doctor() {
 
     }
 
-    public Doctors(String name, String email, String password, String contactNo, String birthDate, String address, String city) {
+    public Doctor(String name, String email, String password, String contactNo, String birthDate, String address, String city) {
         this.name = name;
         this.email = email;
         this.password = password;

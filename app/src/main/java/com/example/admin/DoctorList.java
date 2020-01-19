@@ -20,7 +20,7 @@ public class DoctorList extends AppCompatActivity {
 
     private ListView listView;
     DatabaseReference databaseReference;
-    private List<Doctors> doctorsList;
+    private List<Doctor> doctorList;
     private ListAdapter listAdapter;
 
     @Override
@@ -28,11 +28,11 @@ public class DoctorList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_list);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Doctors");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Doctor");
 
-        doctorsList = new ArrayList<>();
+        doctorList = new ArrayList<>();
 
-        listAdapter = new ListAdapter(DoctorList.this, doctorsList);
+        listAdapter = new ListAdapter(DoctorList.this, doctorList);
 
         listView = findViewById(R.id.listViewId);
     }
@@ -44,13 +44,13 @@ public class DoctorList extends AppCompatActivity {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Toast.makeText(DoctorList.this, "Linner", Toast.LENGTH_LONG).show();
+                Toast.makeText(DoctorList.this, "Right", Toast.LENGTH_LONG).show();
 
-                doctorsList.clear();
+                //doctorList.clear();
 
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    Doctors doctors = dataSnapshot1.getValue(Doctors.class);
-                    doctorsList.add(doctors);
+                    Doctor doctor = dataSnapshot1.getValue(Doctor.class);
+                    doctorList.add(doctor);
                 }
 
                 listView.setAdapter(listAdapter);
@@ -60,7 +60,6 @@ public class DoctorList extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(DoctorList.this, "Error", Toast.LENGTH_LONG).show();
-
             }
         });
 
