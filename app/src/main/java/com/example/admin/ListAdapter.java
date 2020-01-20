@@ -35,7 +35,7 @@ public class ListAdapter extends ArrayAdapter<Doctor> {
         TextView t1 = view.findViewById(R.id.nameTextViewId);
         TextView t2 = view.findViewById(R.id.cityTextViewId);
 
-        t1.setText("Doctor Name: " + doctor.getName());
+        t1.setText("Name: " + doctor.getName());
         t2.setText("City: " + doctor.getCity());
 
         return view;

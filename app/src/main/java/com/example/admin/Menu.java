@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Menu extends AppCompatActivity {
 
-    Button mLogout, mDoctorBtn;
+    Button mLogout, mDoctorBtn,mPatientBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,15 @@ public class Menu extends AppCompatActivity {
 
         mLogout = findViewById(R.id.logoutAdBtn);
         mDoctorBtn = findViewById(R.id.doctorAdBtn);
+        mPatientBtn=findViewById(R.id.patientAdBtn);
+
+        mPatientBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Menu.this,PatientList.class);
+                startActivity(intent);
+            }
+        });
 
         mDoctorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
